@@ -9,16 +9,31 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import Divider from "@mui/material/Divider";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Typography from "@mui/material/Typography";
 import { NAV_ITEMS } from "@/constants";
+import { useTranslation } from "@/lib/LocaleContext";
+import { LOCALES } from "@/lib/i18n";
 import CTAButton from "@/components/atoms/CTAButton";
+import LanguageSwitcher from "@/components/atoms/LanguageSwitcher";
+
+const NAV_KEYS = [
+  "nav.home",
+  "nav.loiNgo",
+  "nav.story",
+  "nav.templates",
+  "nav.whyChoose",
+  "nav.pricing",
+  "nav.contact",
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const { t, locale, setLocale } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -59,8 +74,8 @@ export default function Navbar() {
 
           <div className="flex-1" />
 
-          <nav className="hidden md:flex items-center gap-6">
-            {NAV_ITEMS.map((item) => (
+          <nav className="hidden lg:flex items-center gap-5">
+            {NAV_ITEMS.map((item, index) => (
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
@@ -68,21 +83,24 @@ export default function Navbar() {
                   scrolled ? "text-gray-700" : "text-white"
                 }`}
               >
-                {item.label}
+                {t(NAV_KEYS[index])}
               </button>
             ))}
+            <LanguageSwitcher light={!scrolled} />
             <CTAButton size="small" onClick={() => handleNavClick("#contact")}>
-              Tạo thiệp ngay
+              {t("nav.cta")}
             </CTAButton>
           </nav>
 
-          <IconButton
-            className="md:hidden"
-            onClick={() => setDrawerOpen(true)}
-            sx={{ color: scrolled ? "#2D2D2D" : "#FFFFFF" }}
-          >
-            <MenuIcon />
-          </IconButton>
+          <div className="flex items-center gap-2 lg:hidden">
+            <LanguageSwitcher light={!scrolled} />
+            <IconButton
+              onClick={() => setDrawerOpen(true)}
+              sx={{ color: scrolled ? "#2D2D2D" : "#FFFFFF" }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
 
@@ -90,7 +108,7 @@ export default function Navbar() {
         anchor="right"
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
-        PaperProps={{ sx: { width: 280 } }}
+        PaperProps={{ sx: { width: 300 } }}
       >
         <div className="p-4 flex justify-between items-center border-b">
           <Typography variant="h6" className="font-heading font-bold text-rose-500">
@@ -101,17 +119,46 @@ export default function Navbar() {
           </IconButton>
         </div>
         <List>
-          {NAV_ITEMS.map((item) => (
+          {NAV_ITEMS.map((item, index) => (
             <ListItem key={item.href} disablePadding>
               <ListItemButton onClick={() => handleNavClick(item.href)}>
-                <ListItemText primary={item.label} />
+                <ListItemText primary={t(NAV_KEYS[index])} />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
-        <div className="p-4">
+
+        <Divider sx={{ my: 1 }} />
+
+        {/* Language selection in drawer */}
+        <div className="px-4 py-2">
+          <Typography variant="caption" className="text-gray-500 uppercase tracking-wider font-semibold mb-2 block">
+            Language
+          </Typography>
+          <div className="flex gap-2">
+            {LOCALES.map((loc) => (
+              <button
+                key={loc.code}
+                onClick={() => {
+                  setLocale(loc.code);
+                  setDrawerOpen(false);
+                }}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg border text-sm font-medium transition-all cursor-pointer ${
+                  locale === loc.code
+                    ? "border-rose-400 bg-rose-50 text-rose-600"
+                    : "border-gray-200 bg-white text-gray-600 hover:border-rose-300"
+                }`}
+              >
+                <span>{loc.flag}</span>
+                <span>{loc.code.toUpperCase()}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="p-4 mt-auto">
           <CTAButton fullWidth onClick={() => handleNavClick("#contact")}>
-            Tạo thiệp ngay
+            {t("nav.cta")}
           </CTAButton>
         </div>
       </Drawer>

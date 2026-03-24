@@ -15,6 +15,8 @@ interface PricingCardProps {
   features: string[];
   highlighted: boolean;
   cta: string;
+  popularLabel?: string;
+  currency?: string;
 }
 
 export default function PricingCard({
@@ -23,34 +25,26 @@ export default function PricingCard({
   features,
   highlighted,
   cta,
+  popularLabel = "Phổ biến nhất",
+  currency = "VNĐ",
 }: PricingCardProps) {
   return (
     <motion.div variants={fadeInUp} className="h-full">
       <Card
-        className={`h-full relative overflow-visible ${
-          highlighted
-            ? "border-2 border-rose-400 shadow-xl scale-105"
-            : "border border-gray-200"
-        }`}
+        className={`h-full relative overflow-visible ${highlighted ? "border-2 border-rose-400 shadow-xl scale-105" : "border border-gray-200"}`}
         elevation={highlighted ? 8 : 0}
       >
         {highlighted && (
           <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-            <Badge variant="gold">Phổ biến nhất</Badge>
+            <Badge variant="gold">{popularLabel}</Badge>
           </div>
         )}
         <CardContent className="p-8 flex flex-col h-full">
           <div className="text-center mb-6">
-            <Typography variant="h5" className="font-bold text-gray-900 mb-2">
-              {name}
-            </Typography>
+            <Typography variant="h5" className="font-bold text-gray-900 mb-2">{name}</Typography>
             <div className="flex items-baseline justify-center gap-1">
-              <Typography variant="h3" className="font-bold text-rose-500">
-                {price}
-              </Typography>
-              <Typography variant="body2" className="text-gray-500">
-                VNĐ
-              </Typography>
+              <Typography variant="h3" className="font-bold text-rose-500">{price}</Typography>
+              <Typography variant="body2" className="text-gray-500">{currency}</Typography>
             </div>
           </div>
           <div className="flex-1 mb-8">
@@ -58,20 +52,13 @@ export default function PricingCard({
               {features.map((feature) => (
                 <li key={feature} className="flex items-center gap-3">
                   <CheckIcon sx={{ fontSize: 20, color: "#4CAF50" }} />
-                  <Typography variant="body2" className="text-gray-700">
-                    {feature}
-                  </Typography>
+                  <Typography variant="body2" className="text-gray-700">{feature}</Typography>
                 </li>
               ))}
             </ul>
           </div>
           <div className="text-center">
-            <CTAButton
-              variant={highlighted ? "contained" : "outlined"}
-              fullWidth
-            >
-              {cta}
-            </CTAButton>
+            <CTAButton variant={highlighted ? "contained" : "outlined"} fullWidth>{cta}</CTAButton>
           </div>
         </CardContent>
       </Card>

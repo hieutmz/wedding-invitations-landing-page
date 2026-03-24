@@ -2,8 +2,10 @@
 
 import Navbar from "@/components/organisms/Navbar";
 import HeroSection from "@/components/organisms/HeroSection";
+import LoiNgoSection from "@/components/organisms/LoiNgoSection";
+import OurStorySection from "@/components/organisms/OurStorySection";
 import TemplateShowcase from "@/components/organisms/TemplateShowcase";
-import BenefitsSection from "@/components/organisms/BenefitsSection";
+import WhyChooseSection from "@/components/organisms/WhyChooseSection";
 import DemoSection from "@/components/organisms/DemoSection";
 import HowItWorksSection from "@/components/organisms/HowItWorksSection";
 import PricingSection from "@/components/organisms/PricingSection";
@@ -18,8 +20,10 @@ export default function LandingPageTemplate() {
       <Navbar />
       <main>
         <HeroSection />
+        <LoiNgoSection />
+        <OurStorySection />
         <TemplateShowcase />
-        <BenefitsSection />
+        <WhyChooseSection />
         <DemoSection />
         <HowItWorksSection />
         <PricingSection />

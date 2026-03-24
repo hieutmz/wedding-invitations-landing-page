@@ -41,11 +41,11 @@ export interface Testimonial {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Trang chủ", href: "#hero" },
+  { label: "Lời ngỏ", href: "#loi-ngo" },
+  { label: "Câu chuyện", href: "#our-story" },
   { label: "Mẫu thiệp", href: "#templates" },
-  { label: "Lợi ích", href: "#benefits" },
-  { label: "Cách làm", href: "#how-it-works" },
+  { label: "Vì sao chọn", href: "#why-choose" },
   { label: "Bảng giá", href: "#pricing" },
-  { label: "Đánh giá", href: "#testimonials" },
   { label: "Liên hệ", href: "#contact" },
 ];
 
@@ -70,14 +70,24 @@ export const TEMPLATES: TemplateItem[] = [
 
 export const BENEFITS: BenefitItem[] = [
   {
-    icon: "Speed",
-    title: "Hoàn thành trong 24h",
-    description: "Chỉ cần gửi thông tin, nhận thiệp đẹp trong vòng 24 giờ",
+    icon: "AutoAwesome",
+    title: "Thiết kế tinh tế, hiện đại",
+    description: "Như một website cưới thu nhỏ, được chau chuốt đến từng pixel",
   },
   {
     icon: "MusicNote",
-    title: "Có nhạc nền",
-    description: "Thiệp kèm nhạc nền lãng mạn, tạo cảm xúc đặc biệt",
+    title: "Trải nghiệm cảm xúc",
+    description: "Có nhạc nền, album ảnh, bản đồ và nhiều trải nghiệm cảm xúc",
+  },
+  {
+    icon: "Bolt",
+    title: "Thực hiện nhanh chóng",
+    description: "Chỉ cần gửi thông tin, nhận thiệp đẹp trong vòng 24 giờ",
+  },
+  {
+    icon: "Favorite",
+    title: "Cá nhân hóa theo từng cặp đôi",
+    description: "Không mẫu nào giống mẫu nào, thiệp là câu chuyện của riêng bạn",
   },
   {
     icon: "Map",
@@ -88,6 +98,16 @@ export const BENEFITS: BenefitItem[] = [
     icon: "CheckCircle",
     title: "Xác nhận tham dự",
     description: "Tính năng RSVP giúp quản lý danh sách khách mời dễ dàng",
+  },
+  {
+    icon: "SupportAgent",
+    title: "Hỗ trợ tận tâm 24/7",
+    description: "Luôn sẵn sàng tư vấn và hỗ trợ bạn bất cứ lúc nào",
+  },
+  {
+    icon: "Verified",
+    title: "Cam kết chất lượng",
+    description: "Hoàn tiền 100% nếu không hài lòng, chỉnh sửa miễn phí",
   },
 ];
 
@@ -186,6 +206,60 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "Tháng 9, 2025",
   },
 ];
+
+export const LOI_NGO = {
+  title: "Lời ngỏ",
+  subtitle: "Gửi đến cô dâu & chú rể",
+  paragraphs: [
+    "Ngày cưới không chỉ là một cột mốc, mà là khoảnh khắc bắt đầu của một hành trình yêu thương trọn đời.",
+    "Chúng tôi tin rằng, mỗi cặp đôi đều xứng đáng có một tấm thiệp cưới thật đặc biệt — không chỉ để thông báo, mà còn để kể câu chuyện tình yêu của chính mình.",
+    "Với mong muốn lưu giữ những cảm xúc chân thật và đẹp đẽ nhất, chúng tôi tạo ra những mẫu thiệp cưới online tinh tế, hiện đại và đầy cảm xúc — để mỗi lần mở thiệp, là một lần chạm vào kỷ niệm.",
+  ],
+  signature: "Đội ngũ WeddingCard.vn",
+};
+
+export const OUR_STORY = {
+  title: "Câu chuyện của chúng tôi",
+  subtitle: "Mọi thứ bắt đầu từ một điều rất nhỏ.",
+  paragraphs: [
+    "Chúng tôi từng nhìn thấy những tấm thiệp cưới được gửi đi — đẹp, chỉnh chu, nhưng rồi… nhanh chóng bị lãng quên. Sau buổi tiệc, chúng nằm lại đâu đó trong một góc bàn, hoặc bị cất vào một ngăn kéo không bao giờ mở lại.",
+    "Và chúng tôi tự hỏi:\n\"Tại sao một khoảnh khắc quan trọng như ngày cưới — lại được bắt đầu bằng một tấm thiệp chưa đủ để khiến người ta nhớ?\"",
+    "Trong khi đó, chúng tôi đang sống trong một thế giới nơi mọi cảm xúc đều có thể được lưu giữ sống động hơn — bằng âm thanh, hình ảnh, câu chuyện.\n\nVậy tại sao thiệp cưới lại không thể trở thành một trải nghiệm?",
+    "Ý tưởng về những tấm thiệp cưới online bắt đầu từ đó.\nKhông chỉ là một đường link, mà là một không gian nhỏ — nơi câu chuyện tình yêu được kể lại, nơi từng khoảnh khắc được chạm tới, và nơi mỗi người nhận thiệp có thể thật sự cảm nhận được niềm hạnh phúc của hai bạn.",
+    "Hành trình này không phải lúc nào cũng dễ dàng.\nCó những đêm chúng tôi ngồi chỉnh từng chi tiết nhỏ — từ font chữ, màu sắc, đến cách một bản nhạc vang lên đúng lúc… chỉ để một tấm thiệp trở nên \"có hồn\" hơn.",
+    "Nhưng có lẽ, điều khiến chúng tôi tiếp tục không phải là công nghệ, mà là cảm giác khi nhìn thấy một cặp đôi nói:\n\"Đây chính là câu chuyện của tụi mình.\"",
+    "Và thế là chúng tôi tiếp tục.\n\nKhông chỉ để làm ra những tấm thiệp cưới,\nmà để tạo ra những kỷ niệm có thể được mở lại, được cảm nhận lại — ngay cả sau nhiều năm về sau.",
+    "Bởi vì với chúng tôi,\nmột tấm thiệp cưới không chỉ là lời mời…\nmà là lời mở đầu cho một hành trình yêu thương.",
+  ],
+};
+
+export const WHY_CHOOSE = {
+  title: "Vì sao chọn chúng tôi",
+  subtitle: "Chúng tôi không chỉ làm thiệp — chúng tôi giúp bạn kể câu chuyện tình yêu của mình theo cách đẹp nhất.",
+  closing: "Và quan trọng nhất, chúng tôi luôn đặt cảm xúc của bạn lên hàng đầu — để tấm thiệp không chỉ đẹp, mà còn thật sự \"có hồn\".",
+  items: [
+    {
+      icon: "AutoAwesome",
+      title: "Thiết kế tinh tế, hiện đại",
+      description: "Như một website cưới thu nhỏ",
+    },
+    {
+      icon: "MusicNote",
+      title: "Trải nghiệm cảm xúc",
+      description: "Có nhạc nền, album ảnh, bản đồ và nhiều trải nghiệm cảm xúc",
+    },
+    {
+      icon: "Bolt",
+      title: "Thực hiện nhanh chóng",
+      description: "Chỉ cần gửi thông tin, nhận thiệp đẹp trong vòng 24 giờ",
+    },
+    {
+      icon: "Favorite",
+      title: "Cá nhân hóa theo từng cặp đôi",
+      description: "Không mẫu nào giống mẫu nào",
+    },
+  ],
+};
 
 export const FINAL_CTA = {
   title: "Sẵn sàng tạo thiệp cưới đẹp nhất?",
