@@ -59,7 +59,7 @@ export default function Footer() {
                   { icon: <YouTubeIcon fontSize="small" />, label: "YouTube" },
                   { icon: <TikTokIcon fontSize="small" />, label: "TikTok" },
                 ].map(({ icon, label }) => (
-                  <IconButton key={label} aria-label={label} size="medium" sx={{ color: "#9CA3AF", border: "1px solid rgba(156, 163, 175, 0.2)", "&:hover": { color: "#E8636F", borderColor: "rgba(232, 99, 111, 0.3)", backgroundColor: "rgba(232, 99, 111, 0.08)" }, transition: "all 0.2s ease" }}>
+                  <IconButton key={label} aria-label={label} size="medium" sx={{ color: "#9CA3AF", border: "1px solid rgba(156, 163, 175, 0.2)", "&:hover": { color: "#B86848", borderColor: "rgba(184, 104, 72, 0.3)", backgroundColor: "rgba(184, 104, 72, 0.1)" }, transition: "all 0.2s ease" }}>
                     {icon}
                   </IconButton>
                 ))}
@@ -108,7 +108,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <Typography variant="caption" className="text-gray-500">{FOOTER.copyright}</Typography>
             <Typography variant="caption" className="text-gray-600">
-              {t("footer.madeWith")} <FavoriteIcon sx={{ fontSize: 12, color: "#E8636F", verticalAlign: "middle", mx: 0.3 }} /> {t("footer.inVietnam")}
+              {t("footer.madeWith")} <FavoriteIcon sx={{ fontSize: 12, color: "#B86848", verticalAlign: "middle", mx: 0.3 }} /> {t("footer.inVietnam")}
             </Typography>
           </div>
         </Container>

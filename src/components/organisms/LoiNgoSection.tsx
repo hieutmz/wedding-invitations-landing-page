@@ -12,7 +12,7 @@ export default function LoiNgoSection() {
   const paragraphs = [t("loiNgo.p1"), t("loiNgo.p2"), t("loiNgo.p3")];
 
   return (
-    <section id="loi-ngo" className="py-20 bg-white relative overflow-hidden">
+    <section id="loi-ngo" className="py-20 bg-white dark:bg-[#26211E] relative overflow-hidden">
       <div className="absolute top-0 left-0 w-64 h-64 bg-rose-50 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-60" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-cream-100 rounded-full translate-x-1/3 translate-y-1/3 opacity-50" />
 
@@ -26,7 +26,7 @@ export default function LoiNgoSection() {
           <div className="space-y-6">
             {paragraphs.map((paragraph, index) => (
               <motion.div key={index} variants={fadeInUp}>
-                <Typography variant="body1" className="text-gray-700 text-lg leading-relaxed text-center font-light">
+                <Typography variant="body1" className="text-gray-700 dark:text-[#C4AFA8] text-lg leading-relaxed text-center font-light">
                   {paragraph}
                 </Typography>
               </motion.div>

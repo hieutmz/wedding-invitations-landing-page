@@ -41,19 +41,19 @@ export default function WhyChooseSection() {
   };
 
   return (
-    <section id="why-choose" className="py-20 bg-white relative overflow-hidden">
+    <section id="why-choose" className="py-20 bg-white dark:bg-[#26211E] relative overflow-hidden">
       <Container maxWidth="lg">
         <SectionHeading title={t("whyChoose.title")} subtitle={t("whyChoose.subtitle")} />
 
         <div className="relative group/slider">
-          <button onClick={() => scroll("left")} aria-label="Prev" className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-12 h-12 rounded-full bg-white border-2 border-rose-200 shadow-[0_4px_20px_rgba(232,99,111,0.15)] flex items-center justify-center text-rose-400 hover:text-white hover:bg-rose-500 hover:border-rose-500 hover:shadow-[0_6px_24px_rgba(232,99,111,0.3)] transition-all duration-300 opacity-0 group-hover/slider:opacity-100 focus:opacity-100">
+          <button onClick={() => scroll("left")} aria-label="Prev" className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 w-12 h-12 rounded-full bg-white dark:bg-[#2A2520] border-2 border-rose-200 dark:border-rose-400/30 shadow-[0_4px_20px_rgba(184,104,72,0.15)] flex items-center justify-center text-rose-400 hover:text-white hover:bg-rose-500 hover:border-rose-500 hover:shadow-[0_6px_24px_rgba(184,104,72,0.3)] transition-all duration-300 opacity-0 group-hover/slider:opacity-100 focus:opacity-100">
             <ChevronLeftIcon />
           </button>
-          <button onClick={() => scroll("right")} aria-label="Next" className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-12 h-12 rounded-full bg-white border-2 border-rose-200 shadow-[0_4px_20px_rgba(232,99,111,0.15)] flex items-center justify-center text-rose-400 hover:text-white hover:bg-rose-500 hover:border-rose-500 hover:shadow-[0_6px_24px_rgba(232,99,111,0.3)] transition-all duration-300 opacity-0 group-hover/slider:opacity-100 focus:opacity-100">
+          <button onClick={() => scroll("right")} aria-label="Next" className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 w-12 h-12 rounded-full bg-white dark:bg-[#2A2520] border-2 border-rose-200 dark:border-rose-400/30 shadow-[0_4px_20px_rgba(184,104,72,0.15)] flex items-center justify-center text-rose-400 hover:text-white hover:bg-rose-500 hover:border-rose-500 hover:shadow-[0_6px_24px_rgba(184,104,72,0.3)] transition-all duration-300 opacity-0 group-hover/slider:opacity-100 focus:opacity-100">
             <ChevronRightIcon />
           </button>
-          <div className="absolute left-0 top-0 bottom-4 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-4 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-4 w-8 bg-gradient-to-r from-white dark:from-[#26211E] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-4 w-8 bg-gradient-to-l from-white dark:from-[#26211E] to-transparent z-10 pointer-events-none" />
 
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
             <div ref={scrollRef} className="flex gap-6 overflow-x-auto pb-4 px-2 snap-x snap-mandatory scrollbar-hide" style={{ WebkitOverflowScrolling: "touch" }}>
@@ -61,13 +61,13 @@ export default function WhyChooseSection() {
                 const IconComponent = iconMap[item.icon] || AutoAwesomeIcon;
                 return (
                   <motion.div key={item.icon + index} variants={fadeInUp} className="flex-shrink-0 snap-start w-[260px] sm:w-[280px]">
-                    <Card elevation={0} className="h-full text-center border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <Card elevation={0} className="h-full text-center border border-gray-100 dark:border-white/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
                       <CardContent className="p-6 flex flex-col items-center">
                         <div className={`w-16 h-16 mb-5 rounded-2xl bg-gradient-to-br ${gradients[index % gradients.length]} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                           <IconComponent sx={{ fontSize: 30, color: "#FFFFFF" }} />
                         </div>
-                        <Typography variant="h6" className="font-bold mb-2 text-gray-900 text-base">{t(`benefit.${index}.title`)}</Typography>
-                        <Typography variant="body2" className="text-gray-600">{t(`benefit.${index}.desc`)}</Typography>
+                        <Typography variant="h6" className="font-bold mb-2 text-gray-900 dark:text-[#F5EDE5] text-base">{t(`benefit.${index}.title`)}</Typography>
+                        <Typography variant="body2" className="text-gray-600 dark:text-[#C4AFA8]">{t(`benefit.${index}.desc`)}</Typography>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -84,8 +84,8 @@ export default function WhyChooseSection() {
         </div>
 
         <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="text-center max-w-2xl mx-auto mt-12">
-          <div className="bg-gradient-to-r from-cream-50 via-blush-50 to-cream-50 rounded-2xl p-8 border border-rose-100">
-            <Typography variant="body1" className="text-gray-700 text-lg leading-relaxed italic">{t("whyChoose.closing")}</Typography>
+          <div className="bg-gradient-to-r from-cream-50 via-blush-50 to-cream-50 dark:from-[#26211E] dark:via-[#2A2520] dark:to-[#26211E] rounded-2xl p-8 border border-rose-100 dark:border-white/10">
+            <Typography variant="body1" className="text-gray-700 dark:text-[#C4AFA8] text-lg leading-relaxed italic">{t("whyChoose.closing")}</Typography>
           </div>
         </motion.div>
       </Container>

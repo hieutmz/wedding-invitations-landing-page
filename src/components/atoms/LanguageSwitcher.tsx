@@ -84,7 +84,7 @@ export default function LanguageSwitcher({ light = false }: LanguageSwitcherProp
             transition={{ duration: 0.15, ease: "easeOut" }}
             className="absolute right-0 top-full mt-2.5 z-50"
           >
-            <div className="bg-white rounded-2xl shadow-[0_8px_32px_rgba(232,99,111,0.15)] border-2 border-rose-100 overflow-hidden w-[200px]">
+            <div className="bg-white rounded-2xl shadow-[0_8px_32px_rgba(184,104,72,0.15)] border-2 border-rose-100 overflow-hidden w-[200px]">
               <div className="p-1.5">
                 {LOCALES.map((loc) => {
                   const isActive = locale === loc.code;

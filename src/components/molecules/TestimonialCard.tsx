@@ -24,10 +24,10 @@ export default function TestimonialCard({
 }: TestimonialCardProps) {
   return (
     <motion.div variants={fadeInUp} className="h-full">
-      <Card className="h-full border border-gray-100 hover:shadow-lg transition-shadow duration-300" elevation={0}>
+      <Card className="h-full border border-gray-100 dark:border-white/10 dark:bg-[#2A2520] hover:shadow-lg transition-shadow duration-300" elevation={0}>
         <CardContent className="p-6">
           <FormatQuoteIcon sx={{ fontSize: 32, color: "#E8636F", opacity: 0.3 }} />
-          <Typography variant="body1" className="text-gray-700 mb-4 italic leading-relaxed">
+          <Typography variant="body1" className="text-gray-700 dark:text-[#C4AFA8] mb-4 italic leading-relaxed">
             &ldquo;{text}&rdquo;
           </Typography>
           <div className="flex mb-3">
@@ -44,10 +44,10 @@ export default function TestimonialCard({
               {name.charAt(0)}
             </Avatar>
             <div>
-              <Typography variant="subtitle2" className="font-semibold text-gray-900">
+              <Typography variant="subtitle2" className="font-semibold text-gray-900 dark:text-[#F5EDE5]">
                 {name}
               </Typography>
-              <Typography variant="caption" className="text-gray-500">
+              <Typography variant="caption" className="text-gray-500 dark:text-[#C4AFA8]">
                 {date}
               </Typography>
             </div>

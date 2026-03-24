@@ -27,7 +27,7 @@ export default function SectionHeading({
     >
       <Typography
         variant="h2"
-        className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${light ? "text-white" : "text-gray-900"}`}
+        className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${light ? "text-white" : "text-gray-900 dark:text-[#F5EDE5]"}`}
       >
         {title}
       </Typography>
@@ -37,7 +37,7 @@ export default function SectionHeading({
       {subtitle && (
         <Typography
           variant="body1"
-          className={`text-lg max-w-2xl mx-auto ${light ? "text-white/80" : "text-gray-600"}`}
+          className={`text-lg max-w-2xl mx-auto ${light ? "text-white/80" : "text-gray-600 dark:text-[#C4AFA8]"}`}
         >
           {subtitle}
         </Typography>

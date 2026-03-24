@@ -34,7 +34,7 @@ export default function FeatureCard({ icon, title, description }: FeatureCardPro
       >
         <CardContent>
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-rose-50 to-blush-50 flex items-center justify-center">
-            <IconComponent sx={{ fontSize: 32, color: "#E8636F" }} />
+            <IconComponent sx={{ fontSize: 32, color: "#B86848" }} />
           </div>
           <Typography variant="h6" className="font-bold mb-2 text-gray-900">
             {title}
