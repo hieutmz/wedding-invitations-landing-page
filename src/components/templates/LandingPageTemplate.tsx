@@ -13,10 +13,13 @@ import TestimonialsSection from "@/components/organisms/TestimonialsSection";
 import FinalCTASection from "@/components/organisms/FinalCTASection";
 import ContactSection from "@/components/organisms/ContactSection";
 import Footer from "@/components/organisms/Footer";
+import ScrollToTopButton from "@/components/atoms/ScrollToTopButton";
+import QuickAccessDialog from "@/components/atoms/QuickAccessDialog";
+import FloatingContact from "@/components/atoms/FloatingContact";
 
 export default function LandingPageTemplate() {
   return (
-    <div id="__next">
+    <div>
       <Navbar />
       <main>
         <HeroSection />
@@ -32,6 +35,9 @@ export default function LandingPageTemplate() {
         <ContactSection />
       </main>
       <Footer />
+      <ScrollToTopButton />
+      <QuickAccessDialog />
+      <FloatingContact />
     </div>
   );
 }

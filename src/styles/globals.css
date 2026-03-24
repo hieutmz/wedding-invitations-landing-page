@@ -10,11 +10,30 @@ body {
   font-family: "Be Vietnam Pro", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FAFAF8;
+  color: #2D2D2D;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #1C1917;
+  color: #F5EDE5;
+}
+
+html.dark section {
+  color: #F5EDE5;
+}
+
+/* Smooth transition for all color changes */
+html.dark *,
+html.dark *::before,
+html.dark *::after {
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 @layer base {
   ::selection {
-    background-color: rgba(232, 99, 111, 0.2);
+    background-color: rgba(184, 104, 72, 0.2);
     color: inherit;
   }
 }
