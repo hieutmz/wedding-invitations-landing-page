@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Be_Vietnam_Pro } from "next/font/google";
+import { Playfair_Display, Be_Vietnam_Pro, Dancing_Script, Noto_Serif } from "next/font/google";
 import Providers from "./providers";
 import "@/styles/globals.css";
 
@@ -13,6 +13,18 @@ const beVietnam = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-body",
+  display: "swap",
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-script",
+  display: "swap",
+});
+
+const notoSerif = Noto_Serif({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -177,7 +189,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${playfair.variable} ${beVietnam.variable}`}>
+    <html lang="vi" className={`${playfair.variable} ${beVietnam.variable} ${dancingScript.variable} ${notoSerif.variable}`}>
       <head>
         {/* Anti-FOUC: set dark class synchronously before React hydrates */}
         <script

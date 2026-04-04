@@ -33,7 +33,7 @@ html.dark *::after {
 
 @layer base {
   ::selection {
-    background-color: rgba(184, 104, 72, 0.2);
+    background-color: rgba(107, 158, 133, 0.2);
     color: inherit;
   }
 }
@@ -51,4 +51,79 @@ html.dark *::after {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
+
+/* ===== Invitation Page Styles ===== */
+.invitation-page {
+  background: linear-gradient(180deg, #ffffff 0%, #f2f8f5 30%, #ffffff 60%, #f2f8f5 100%);
+  color: #2c3e36;
+  font-family: var(--font-body), "Be Vietnam Pro", system-ui, sans-serif;
+}
+
+.font-script {
+  font-family: var(--font-script), "Dancing Script", cursive;
+}
+
+.sage-gradient-text {
+  background: linear-gradient(135deg, #6B9E85 0%, #8BB8A4 50%, #6B9E85 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.invitation-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.invitation-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, #6B9E8540, transparent);
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Music disc animation */
+@keyframes discSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.disc-spinning {
+  animation: discSpin 3s linear infinite;
+}
+
+.disc-paused {
+  animation-play-state: paused;
+}
+
+/* Envelope open effect */
+@keyframes envelopeOpen {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 100% 0);
+  }
+}
+
+/* Sage shimmer for borders */
+.sage-shimmer-border {
+  background: linear-gradient(90deg, transparent, #6B9E8540, transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
 }

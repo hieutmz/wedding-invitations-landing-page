@@ -49,11 +49,19 @@ const config: Config = {
       fontFamily: {
         heading: ["Playfair Display", "Georgia", "serif"],
         body: ["Be Vietnam Pro", "system-ui", "sans-serif"],
+        script: ["Dancing Script", "cursive"],
+        display: ["Noto Serif", "Georgia", "serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
         "slide-up": "slideUp 0.6s ease-out forwards",
         float: "float 6s ease-in-out infinite",
+        heartbeat: "heartbeat 1.5s ease-in-out infinite",
+        shimmer: "shimmer 3s linear infinite",
+        "spin-slow": "spin 8s linear infinite",
+        "pulse-soft": "pulseSoft 3s ease-in-out infinite",
+        "float-slow": "floatSlow 8s ease-in-out infinite",
+        "fade-in-up": "fadeInUp 0.8s ease-out forwards",
       },
       keyframes: {
         fadeIn: {
@@ -67,6 +75,30 @@ const config: Config = {
         float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-20px)" },
+        },
+        heartbeat: {
+          "0%, 100%": { transform: "scale(1)" },
+          "14%": { transform: "scale(1.15)" },
+          "28%": { transform: "scale(1)" },
+          "42%": { transform: "scale(1.15)" },
+          "70%": { transform: "scale(1)" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        pulseSoft: {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "1" },
+        },
+        floatSlow: {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "33%": { transform: "translateY(-10px) rotate(1deg)" },
+          "66%": { transform: "translateY(5px) rotate(-1deg)" },
+        },
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(40px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
     },
